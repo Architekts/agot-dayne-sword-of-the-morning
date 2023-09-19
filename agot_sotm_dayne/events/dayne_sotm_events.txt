@@ -1,0 +1,56 @@
+namespace = danye_sword_sucka
+
+danye_sword_sucka.0001 = {
+	type = character_event
+	title = danye_sword_sucka.0001.t
+	desc = danye_sword_sucka.0001.desc
+	theme = faith
+
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	right_portrait = {
+		character = scope:my_relation
+		animation = personality_honorable
+	}
+
+	#Accept
+	option = {
+		name = agot_valyrian_swords.0002.a
+
+		give_nickname = nick_the_sword_of_the_morning
+
+		add_character_flag = is_sword_of_morning
+
+		dynasty:dynn_Dayne.dynast = {
+			random_character_artifact = {
+				limit  = { has_artifact_modifier = vs_dawn_modifier }
+				save_scope_as = dawn
+			}
+		}
+		
+		add_prestige = massive_prestige_value
+		add_prestige_level = 1
+
+		hidden_effect = {
+			scope:dawn = {
+				equip_artifact_to_owner_replace = yes
+			}
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	#I am the player and an edgelord
+	option = {
+		name = agot_valyrian_swords.0002.b
+
+		ai_chance = {
+			base = 0
+		}
+	}
+}

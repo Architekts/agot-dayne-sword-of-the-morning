@@ -1,0 +1,86 @@
+agot_become_sotm = {
+	picture = "gfx/interface/illustrations/decisions/fp2_decision_struggle_hostility.dds"
+	
+	ai_check_interval = 60
+	
+	sort_order = 80
+
+	major = yes	
+	desc = dayne_sotm_desc
+	selection_tooltip = agot_become_sotm
+
+	is_shown = {
+		is_landed = yes
+		exists = dynasty
+		dynasty = {
+			has_dynasty_perk = dayne_legacy_1
+		}
+		NOT = {
+			has_character_flag = is_sword_of_morning
+		}
+	}
+
+	is_valid = {
+		OR = {
+				has_trait = education_martial_prowess_4
+				has_trait = lifestyle_blademaster  
+				prowess >= 40
+		}
+
+		prowess >= 25
+		
+		custom_description = {
+			text = dawn_is_needed
+			any_character_artifact = {
+				has_artifact_modifier = vs_dawn_modifier
+			}
+		}
+
+
+
+		OR = {
+				has_trait = just
+				has_trait = honorable
+				has_trait = brave
+		}
+			
+		NOR = {
+				has_trait = murderer
+				has_trait = kinslayer
+				has_trait = gluttonous
+				has_trait = greedy
+				has_trait = lazy
+				has_trait = callous
+				has_trait = sadistic
+				has_trait = deceitful
+				has_trait = drunkard
+				has_trait = craven
+				has_trait = arbitrary
+				has_trait = ruthless
+				has_trait = torturer
+				has_trait = physique_bad
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_at_war = no
+
+	}
+	
+	effect = {
+		trigger_event = {
+			id = danye_sword_sucka.0001
+		}
+	}
+	#Expand on this later 
+	
+	ai_potential = {
+		is_landed = yes
+		is_available_adult = yes
+	}
+
+	ai_will_do = {
+		base = 20
+	}
+}
